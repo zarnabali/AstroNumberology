@@ -1,6 +1,6 @@
 import profileIcon from '../assets/logo/profile_icon.png'; 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { styles } from '../styles';
 import { logo, menu, close } from '../assets';
@@ -16,6 +16,7 @@ const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate(); // Hook for navigation
 
   // Check screen width on mount and window resize
   useEffect(() => {
@@ -34,10 +35,16 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
+  // Function to navigate to login page
+  const handleProfileClick = () => {
+    navigate('/login');
+  };
+
   return (
     <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-50 bg-primary shadow-lg`}> 
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
+          to="/"
           className='flex items-center gap-2'
           onClick={() => {
             setActive('');
@@ -65,7 +72,12 @@ const Navbar = () => {
               </li>
             ))}
             <li>
-              <img src={profileIcon} alt='Profile' className='h-6 w-6 cursor-pointer' />
+              <img 
+                src={profileIcon} 
+                alt='Profile' 
+                className='h-6 w-6 cursor-pointer hover:opacity-80 transition-opacity' 
+                onClick={handleProfileClick}
+              />
             </li>
           </ul>
         ) : (
@@ -98,7 +110,15 @@ const Navbar = () => {
                   </li>
                 ))}
                 <li>
-                  <img src={profileIcon} alt='Profile' className='h-6 w-6 cursor-pointer' />
+                  <img 
+                    src={profileIcon} 
+                    alt='Profile' 
+                    className='h-6 w-6 cursor-pointer hover:opacity-80 transition-opacity' 
+                    onClick={() => {
+                      setToggle(false);
+                      handleProfileClick();
+                    }}
+                  />
                 </li>
               </ul>
             </div>

@@ -1,41 +1,18 @@
-
-
-import { About, Contact, Hero, Navbar, StarsCanvas} from './components';
-import ChartSection from './components/Chart';
-import FAQSection from './components/FAQs';
-import Footer from './components/Footer';
-import CustomSetion from './components/CustomSetion';
-import { BrowserRouter } from 'react-router-dom';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Homepage from './pages/Homepage';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/Loginpage';
 
 function App() {
-  
-
   return (
-   <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <div className=' bg-cover bg-no-repeat bg-center'>
-          <Navbar/>
-          <Hero/>
-          <About/>
-          <ChartSection />
-         
-          <CustomSetion />
-       
-        <div className='relative z-0'>
-          <Contact/>
-          <StarsCanvas/>
-        </div>
-        <FAQSection/>
-        <Footer />
-        </div>
-        
-        
-        
-        
-      </div>
-   </BrowserRouter>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
