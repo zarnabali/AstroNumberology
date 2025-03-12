@@ -32,7 +32,7 @@ const CustomSection = () => {
           {/* Heading Row - Left Aligned */}
           <div className="w-full" ref={headingRef}>
             <div className="flex flex-row items-center gap-4">
-              <h1 className="font-black text-white lg:text-[60px] sm:text-[48px] xs:text-[40px] text-[32px] lg:leading-[76px] mt-0 pl-6">
+              <h1 className="font-black text-white lg:text-[60px] sm:text-[48px] xs:text-[40px] text-[32px] lg:leading-[76px] mt-0 ">
                 Featured <span className="text-[#dcb483]">Discovery</span>
               </h1>
             </div>
@@ -49,8 +49,8 @@ const CustomSection = () => {
           </div>
 
           {/* Description Row - Left Aligned */}
-          <div className="w-full pl-6" ref={descriptionRef}>
-            <p className="text-[#dfd9ff] font-medium lg:text-[20px] sm:text-[18px] xs:text-[16px] text-[16px] lg:leading-[32px] mt-2 mb-6 ">
+          <div className="w-full " ref={descriptionRef}>
+            <p className="text-[#dfd9ff] font-medium lg:text-[20px] sm:text-[18px] xs:text-[16px] text-[16px] lg:leading-[32px] mt-6 mb-6 ">
             Discover the Universal Order: a symbolic hierarchy that unites warmth, color, number, and geometry through the square and the cube! The universe functions in perfect harmony, and you too can make your personal universe shine, based on your date of birth. Don't miss this unique opportunity to create balance and beauty in your life!
             </p>
             <a href="#" className="text-[#dcb483] underline text-lg font-medium hover:text-[#b88a5b] transition ">
