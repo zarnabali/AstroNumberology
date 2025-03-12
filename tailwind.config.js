@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   mode: "jit",
   theme: {
+    build: {
+      chunkSizeWarningLimit: 1000, // Increase the limit
+    },
     extend: {
       colors: {
         primary: "#050816",
